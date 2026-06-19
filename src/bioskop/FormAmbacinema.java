@@ -91,18 +91,24 @@ public class FormAmbacinema extends javax.swing.JFrame {
         bgFilm = new javax.swing.ButtonGroup();
         panelInduk = new javax.swing.JPanel();
         jPanelPilFilmDanJam = new javax.swing.JPanel();
+        bLnjtKePilKursi = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         ambacong = new javax.swing.JRadioButton();
         ambatar = new javax.swing.JRadioButton();
         argoNgawi = new javax.swing.JRadioButton();
-        cbJamTayang = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        bLnjtKePilKursi = new javax.swing.JButton();
+        cbJamTayang = new javax.swing.JComboBox<>();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jLabel8 = new javax.swing.JLabel();
         jPanelPilKursi = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         A1 = new javax.swing.JToggleButton();
         A2 = new javax.swing.JToggleButton();
@@ -115,6 +121,10 @@ public class FormAmbacinema extends javax.swing.JFrame {
         C3 = new javax.swing.JToggleButton();
         bKbliKePilFilm = new javax.swing.JButton();
         bLnjtKeKonfirmasi = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -125,25 +135,59 @@ public class FormAmbacinema extends javax.swing.JFrame {
         jPanelPilFilmDanJam.setMinimumSize(new java.awt.Dimension(405, 295));
         jPanelPilFilmDanJam.setPreferredSize(new java.awt.Dimension(405, 295));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        bLnjtKePilKursi.setBackground(new java.awt.Color(255, 51, 0));
+        bLnjtKePilKursi.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        bLnjtKePilKursi.setForeground(new java.awt.Color(255, 255, 255));
+        bLnjtKePilKursi.setText("Lanjut");
+        bLnjtKePilKursi.setBorder(null);
+        bLnjtKePilKursi.setBorderPainted(false);
+        bLnjtKePilKursi.addActionListener(this::bLnjtKePilKursiActionPerformed);
+
+        jPanel1.setBackground(new java.awt.Color(25, 25, 25));
+
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Ambacinema");
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Pilih Film & Jam Tayang\n"));
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        jPanel3.setBackground(new java.awt.Color(255, 0, 0));
+
+        jPanel2.setBackground(new java.awt.Color(51, 51, 51));
 
         bgFilm.add(ambacong);
+        ambacong.setForeground(new java.awt.Color(255, 255, 255));
         ambacong.setText("Ambacong");
+        ambacong.addActionListener(this::ambacongActionPerformed);
 
         bgFilm.add(ambatar);
+        ambatar.setForeground(new java.awt.Color(255, 255, 255));
         ambatar.setText("Ambatar");
+        ambatar.addActionListener(this::ambatarActionPerformed);
 
         bgFilm.add(argoNgawi);
+        argoNgawi.setForeground(new java.awt.Color(255, 255, 255));
         argoNgawi.setText("Argo Ngawi Gejes Gejes");
 
+        jLabel2.setForeground(new java.awt.Color(255, 255, 0));
         jLabel2.setText("Rp. 55.000");
 
+        jLabel3.setForeground(new java.awt.Color(255, 255, 0));
         jLabel3.setText("Rp. 55.000");
 
+        jLabel4.setForeground(new java.awt.Color(255, 255, 0));
         jLabel4.setText("Rp. 55.000");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -153,72 +197,111 @@ public class FormAmbacinema extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cbJamTayang, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ambacong)
-                            .addComponent(ambatar)
-                            .addComponent(argoNgawi))
-                        .addGap(46, 46, 46)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2))))
-                .addContainerGap(130, Short.MAX_VALUE))
+                    .addComponent(argoNgawi)
+                    .addComponent(ambatar)
+                    .addComponent(ambacong))
+                .addGap(46, 46, 46)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel3))
+                .addContainerGap(122, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(14, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ambacong)
                     .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ambatar)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(argoNgawi)
-                    .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                .addComponent(cbJamTayang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addGap(15, 15, 15))
+        );
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        bLnjtKePilKursi.setText("Lanjut");
-        bLnjtKePilKursi.addActionListener(this::bLnjtKePilKursiActionPerformed);
+        cbJamTayang.setToolTipText("");
+
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Pilih Film");
+
+        jLabel7.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("Klik pada film yang ingin kamu saksikan");
+
+        jSeparator1.setForeground(new java.awt.Color(51, 51, 51));
+
+        jSeparator2.setForeground(new java.awt.Color(51, 51, 51));
+
+        jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel8.setText("Pilih jam tayang :");
 
         javax.swing.GroupLayout jPanelPilFilmDanJamLayout = new javax.swing.GroupLayout(jPanelPilFilmDanJam);
         jPanelPilFilmDanJam.setLayout(jPanelPilFilmDanJamLayout);
         jPanelPilFilmDanJamLayout.setHorizontalGroup(
             jPanelPilFilmDanJamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jSeparator2)
             .addGroup(jPanelPilFilmDanJamLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanelPilFilmDanJamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelPilFilmDanJamLayout.createSequentialGroup()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelPilFilmDanJamLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jPanelPilFilmDanJamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelPilFilmDanJamLayout.createSequentialGroup()
-                                .addComponent(bLnjtKePilKursi)
-                                .addContainerGap())
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelPilFilmDanJamLayout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(149, 149, 149))))))
+                .addGap(12, 12, 12)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 14, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelPilFilmDanJamLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jLabel8)
+                .addGap(18, 18, 18)
+                .addComponent(cbJamTayang, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(bLnjtKePilKursi, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14))
+            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanelPilFilmDanJamLayout.setVerticalGroup(
             jPanelPilFilmDanJamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelPilFilmDanJamLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel7)
+                .addGap(21, 21, 21)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
-                .addComponent(bLnjtKePilKursi)
-                .addContainerGap())
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanelPilFilmDanJamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(bLnjtKePilKursi, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanelPilFilmDanJamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cbJamTayang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         panelInduk.add(jPanelPilFilmDanJam, "pilFilmDanJam");
@@ -228,80 +311,135 @@ public class FormAmbacinema extends javax.swing.JFrame {
         jPanelPilKursi.setMinimumSize(new java.awt.Dimension(405, 295));
         jPanelPilKursi.setPreferredSize(new java.awt.Dimension(405, 295));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel6.setText("Ambacinema");
-
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Pilih Kursi\n"));
+        jPanel4.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel4.setForeground(new java.awt.Color(102, 102, 102));
         jPanel4.setLayout(new java.awt.GridLayout(3, 3, 10, 10));
 
+        A1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         A1.setText("A1");
+        A1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel4.add(A1);
 
+        A2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         A2.setText("A2");
+        A2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel4.add(A2);
 
+        A3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         A3.setText("A3");
+        A3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel4.add(A3);
 
+        B1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         B1.setText("B1");
+        B1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel4.add(B1);
 
+        B2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         B2.setText("B2");
+        B2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel4.add(B2);
 
+        B3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         B3.setText("B3");
+        B3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel4.add(B3);
 
+        C1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         C1.setText("C1");
+        C1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel4.add(C1);
 
+        C2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         C2.setText("C2");
+        C2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel4.add(C2);
 
+        C3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         C3.setText("C3");
+        C3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel4.add(C3);
 
+        bKbliKePilFilm.setBackground(new java.awt.Color(102, 102, 102));
+        bKbliKePilFilm.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        bKbliKePilFilm.setForeground(new java.awt.Color(204, 204, 204));
         bKbliKePilFilm.setText("Kembali");
+        bKbliKePilFilm.setBorder(null);
         bKbliKePilFilm.addActionListener(this::bKbliKePilFilmActionPerformed);
 
+        bLnjtKeKonfirmasi.setBackground(new java.awt.Color(255, 0, 0));
+        bLnjtKeKonfirmasi.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        bLnjtKeKonfirmasi.setForeground(new java.awt.Color(255, 255, 255));
         bLnjtKeKonfirmasi.setText("Lanjut");
+        bLnjtKeKonfirmasi.setBorder(null);
+        bLnjtKeKonfirmasi.setBorderPainted(false);
         bLnjtKeKonfirmasi.addActionListener(this::bLnjtKeKonfirmasiActionPerformed);
+
+        jPanel5.setBackground(new java.awt.Color(25, 25, 25));
+
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("Ambacinema");
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("Pilih Kursi");
+
+        jLabel10.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("Pilih kursi yang ingin anda tempati");
 
         javax.swing.GroupLayout jPanelPilKursiLayout = new javax.swing.GroupLayout(jPanelPilKursi);
         jPanelPilKursi.setLayout(jPanelPilKursiLayout);
         jPanelPilKursiLayout.setHorizontalGroup(
             jPanelPilKursiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanelPilKursiLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanelPilKursiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(jPanelPilKursiLayout.createSequentialGroup()
+                .addGap(94, 94, 94)
+                .addGroup(jPanelPilKursiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanelPilKursiLayout.createSequentialGroup()
-                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 393, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelPilKursiLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jPanelPilKursiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelPilKursiLayout.createSequentialGroup()
-                                .addComponent(bKbliKePilFilm)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(bLnjtKeKonfirmasi)
-                                .addContainerGap())
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelPilKursiLayout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addGap(149, 149, 149))))))
+                        .addComponent(bKbliKePilFilm, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(bLnjtKeKonfirmasi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(96, Short.MAX_VALUE))
         );
         jPanelPilKursiLayout.setVerticalGroup(
             jPanelPilKursiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelPilKursiLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel6)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel10)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanelPilKursiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bLnjtKeKonfirmasi)
-                    .addComponent(bKbliKePilFilm))
-                .addContainerGap())
+                    .addComponent(bKbliKePilFilm, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bLnjtKeKonfirmasi, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         panelInduk.add(jPanelPilKursi, "pilKursi");
@@ -314,7 +452,7 @@ public class FormAmbacinema extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelInduk, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelInduk, javax.swing.GroupLayout.DEFAULT_SIZE, 356, Short.MAX_VALUE)
         );
 
         pack();
@@ -382,6 +520,14 @@ public class FormAmbacinema extends javax.swing.JFrame {
         cl.show(panelInduk, "pilFilmDanJam");
     }//GEN-LAST:event_bKbliKePilFilmActionPerformed
 
+    private void ambatarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ambatarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ambatarActionPerformed
+
+    private void ambacongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ambacongActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ambacongActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -426,14 +572,24 @@ public class FormAmbacinema extends javax.swing.JFrame {
     private javax.swing.ButtonGroup bgFilm;
     private javax.swing.JComboBox<String> cbJamTayang;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanelPilFilmDanJam;
     private javax.swing.JPanel jPanelPilKursi;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JPanel panelInduk;
     // End of variables declaration//GEN-END:variables
 }
