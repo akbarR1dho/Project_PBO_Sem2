@@ -26,8 +26,8 @@ public class Ambacinema {
         kursiTerpesan.get(key).addAll(daftarKursi);
     }
 
-    public List<String> getJamTayangValid(String[] semuaJam) {
-        List<String> jamValid = new ArrayList<>();
+    public List<String> getSemuaJamTayang(String[] semuaJam) {
+        List<String> hasil = new ArrayList<>();
         LocalTime sekarang = LocalTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
 
@@ -35,11 +35,15 @@ public class Ambacinema {
             try {
                 LocalTime waktuTayang = LocalTime.parse(jam, formatter);
                 if (waktuTayang.isAfter(sekarang)) {
-                    jamValid.add(jam);
+                    hasil.add(jam);
+                } else {
+                    hasil.add(jam + " Habis");
                 }
-            } catch (Exception e) { /* mengabaikan format salah */ }
+            } catch (Exception e) { 
+                hasil.add(jam);
+            }
         }
-        return jamValid;
+        return hasil;
     }
 
 }

@@ -36,17 +36,26 @@ public class FormAmbacinema extends javax.swing.JFrame {
 
         // Filter jam tayang saat aplikasi dibuka
         updateComboJam();
+        
+        cbJamTayang.addActionListener(e -> {
+            if (cbJamTayang.getSelectedItem() != null) {
+                String selected = cbJamTayang.getSelectedItem().toString();
+                bLnjtKePilKursi.setEnabled(!selected.contains("Habis"));
+            }
+        });
     }
 
     private void updateComboJam() {
         cbJamTayang.removeAllItems();
-        List<String> valid = logic.getJamTayangValid(masterJam);
-        for (String j : valid) {
+        List<String> semuaJam = logic.getSemuaJamTayang(masterJam);
+        for (String j : semuaJam) {
             cbJamTayang.addItem(j);
         }
 
-        if (cbJamTayang.getItemCount() == 0) {
-            cbJamTayang.addItem("Habis");
+        if (cbJamTayang.getItemCount() > 0) {
+            String selected = cbJamTayang.getSelectedItem().toString();
+            bLnjtKePilKursi.setEnabled(!selected.contains("Habis"));
+        } else {
             bLnjtKePilKursi.setEnabled(false);
         }
     }
@@ -464,6 +473,12 @@ public class FormAmbacinema extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Pilih Film Terlebih Dahulu!");
             return;
         }
+        
+        if (cbJamTayang.getSelectedItem() != null && cbJamTayang.getSelectedItem().toString().contains("Habis")) {
+            JOptionPane.showMessageDialog(this, "Jam tayang sudah lewat, silakan pilih jam yang lain!");
+            return;
+        }
+
         refreshKursi();
         // Pindah Card ke Panel Kursi
         CardLayout cl = (CardLayout) panelInduk.getLayout();
@@ -510,6 +525,8 @@ public class FormAmbacinema extends javax.swing.JFrame {
                     + "=====================");
 
             refreshKursi();
+            bgFilm.clearSelection();
+            
             bKbliKePilFilmActionPerformed(null); // Kembali ke menu utama
         }
     }//GEN-LAST:event_bLnjtKeKonfirmasiActionPerformed
